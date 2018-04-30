@@ -43,5 +43,5 @@ Go back to root folder and run -> node app.js
 ```
 
 ### Licence
-<a href="https://github.com/johnmakridis/angular-electron-starter/blob/master/LICENSE" target="_blank">MIT License</a>
+<a href="https://github.com/johnmakridis/nodejs-youtube2mp3/blob/master/LICENSE" target="_blank">MIT License</a>
 
