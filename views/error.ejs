@@ -1,3 +1,51 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Error</title>
+    <link rel="stylesheet" href="/modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/modules/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/modules/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Youtube2MP3</a>
+            <a class="btn btn-outline-primary" href="https://github.com/johnmakridis/nodejs-youtube2mp3" target="_blank">
+                <i class="fa fa-github"></i> View on Github
+            </a>
+        </div>
+    </nav>
+
+    <!-- Masthead -->
+    <header class="masthead text-white text-center" style="min-height: 100vh;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h3 class="mb-1">Oops! an error has occured...</h3>
+                    <h2 class="mt-5">
+                        <%= error.status %>
+                    </h2>
+                    <h3>
+                        <%= message %>
+                    </h3>
+                    <a class="btn btn-link mt-5" href="/">
+                        <i class="fa fa-long-arrow-left"></i>&nbsp;&nbsp;Back to Homepage
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+</body>
+
+</html>
