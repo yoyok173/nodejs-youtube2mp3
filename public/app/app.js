@@ -34,6 +34,7 @@ app.controller("HomeCtrl", ["$scope", "$http", ($scope, $http) => {
             if ($scope.converter.videoURL) {
                 $http.post("/convert", { link: $scope.converter.videoURL })
                     .then((response) => {
+                        console.log(response);
                         if (response.data == "video_not_found") {
                             $scope.videoNotFound = true;
                         }
