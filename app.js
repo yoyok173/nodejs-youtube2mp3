@@ -20,6 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/modules', express.static(__dirname + '/public/node_modules'));
+app.use('/music', express.static(__dirname + '/public/temp'));
 
 
 app.use((req, res, next) => {
