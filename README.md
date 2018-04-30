@@ -7,7 +7,7 @@
 ### Linux
 ```bash
 # Download & install Python 2.7 for linux
-[Download Python 2.7](https://www.python.org/downloads/)
+> <a href="https://www.python.org/downloads/" target="_blank">Download Python 2.7</a>
 
 # Install Pip (Python package management system - Python Package Index)
 > sudo apt install python-pip
@@ -24,22 +24,24 @@ The youtube-dl executable, ffmpeg, etc. are already placed in the repository ins
 # Usage
 ```bash
 # Clone this repository
-git clone https://github.com/johnmakridis/nodejs-youtube2mp3
+> git clone https://github.com/johnmakridis/nodejs-youtube2mp3
 
 # Change directory to repository folder
-cd nodejs-youtube2mp3
+> cd nodejs-youtube2mp3
 
 # Install server dependencies
-npm install
+> npm install
 
 # Install app dependencies
-cd public
-yarn install
+> cd public
+> yarn install
 
 # Run the app
-Go back to root folder and run -> node app.js
+# Go back to root folder and run 
+> node app.js
 
-# Open the app by browsing to http://localhost:7777
+# Open the app by browsing to
+<a href="http://localhost:7777" target="_blank">http://localhost:7777</a>
 ```
 
 ### Licence
