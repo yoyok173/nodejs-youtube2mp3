@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="/modules/simple-line-icons/css/simple-line-icons.css">
   <link rel="stylesheet" href="/modules/font-awesome/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -21,7 +20,7 @@
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="/">Youtube2MP3</a>
-      <a class="btn btn-primary btn-link" href="https://github.com/johnmakridis/nodejs-youtube2mp3" target="_blank">
+      <a class="btn btn-outline-primary" href="https://github.com/johnmakridis/nodejs-youtube2mp3" target="_blank">
         <i class="fa fa-github"></i> View on Github
       </a>
     </div>
@@ -33,7 +32,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <h1 class="mb-1">Youtube video to MP3 converter!</h1>
+          <h1 class="mb-1">Youtube video to MP3 converter</h1>
           <h4 class="mb-5">Insert video URL below and click convert to get the mp3 file.</h4>
         </div>
         <div class="col-md-10 col-lg-10 col-xl-10 mx-auto">
@@ -41,34 +40,36 @@
 
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="text" class="form-control form-control-lg" ng-model="converter.videoURL" ng-disabled="convertFinished" placeholder="Youtube URL, e.g. https://www.youtube.com/watch?v=1GX_4PgUhYo"
-                  autofocus>
+                <input type="url" class="form-control form-control-lg" ng-model="converter.videoURL" ng-disabled="convertFinished || disableConvertButton"
+                  placeholder="Youtube URL, e.g. https://www.youtube.com/watch?v=1GX_4PgUhYo" autofocus required>
               </div>
               <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary" ng-disabled="convertFinished">Convert!</button>
+                <button type="submit" class="btn btn-block btn-lg btn-primary" ng-disabled="convertFinished || disableConvertButton">Convert!</button>
               </div>
             </div>
 
             <div class="form-row mt-4 text-center">
               <div class="col-12">
                 <div class="loader" id="loader" data-loading></div>
+                <p class="loaderText" style="left: 50%; position: absolute; margin-top: 68px; margin-left: -10px;" data-loading>Please wait...</p>
               </div>
             </div>
 
-            <div class="form-row mt-5 text-center ng-cloak">
+            <div class="form-row mt-lg-5 text-center ng-cloak">
               <div class="col-12 col-md-12 mb-md-0">
 
                 <h5 class="mb-3" ng-show="convertFinished && downloadURL">Conversion Finished!</h5>
-                <a class="btn btn-primary" ng-href="/" ng-show="convertFinished && downloadURL">
+                <a class="btn btn-link" ng-href="/" ng-show="convertFinished && downloadURL">
                   <i class="fa fa-refresh"></i>&nbsp;&nbsp;Convert new video
                 </a>
-                <a class="btn btn-success" target="_blank" href="{{downloadURL}}" ng-show="convertFinished && downloadURL">
+                <a class="btn btn-success btn-lg downloadButton" target="_blank" href="javascript:void(0);" ng-show="convertFinished && downloadURL"
+                  ng-click="converter.openMP3(downloadURL)">
                   <i class="fa fa-download"></i>&nbsp;&nbsp;Download MP3
                 </a>
 
 
                 <h5 class="text-danger" ng-show="convertFinished && videoNotFound">Video not found..</h5>
-                <a class="btn btn-primary" ng-href="/" ng-show="convertFinished && videoNotFound">
+                <a class="btn btn-link" ng-href="/" ng-show="convertFinished && videoNotFound">
                   <i class="fa fa-refresh"></i>&nbsp;&nbsp;Convert new video
                 </a>
               </div>
@@ -81,16 +82,16 @@
   </header>
 
   <!-- Icons Grid -->
-  <section ng-show="false" class="features-icons bg-light text-center ng-cloak">
+  <section ng-show="true" class="features-icons bg-light text-center ng-cloak">
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
-              <i class="icon-screen-desktop m-auto text-primary"></i>
+              <i class="icon-earphones m-auto text-primary"></i>
             </div>
-            <h3>Fully Responsive</h3>
-            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+            <h3>High Audio Quality</h3>
+            <p class="lead mb-0">Convert to MP3 with the highest possible quality!</p>
           </div>
         </div>
         <div class="col-lg-4">
@@ -108,37 +109,13 @@
               <i class="icon-check m-auto text-primary"></i>
             </div>
             <h3>Easy to Use</h3>
-            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
+            <p class="lead mb-0">Ready to use with your own youtube video selections!</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- Call to Action -->
-  <section ng-show="false" class="call-to-action text-white text-center ng-cloak">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <h2 class="mb-4">Ready to get started? Sign up now!</h2>
-        </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-              </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer class="footer bg-light">
@@ -155,9 +132,9 @@
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
           <ul class="list-inline mb-0">
-            <li class="list-inline-item mr-3">
+            <li class="list-inline-item mr-3 text-muted"> by
               <a href="https://johnmakridis.github.io/" target="_blank" title="About the Author">
-                <i class="fa fa-user fa-2x fa-fw"></i>
+                John Makridis
               </a>
             </li>
           </ul>
@@ -170,6 +147,9 @@
   <script src="/modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="/modules/angular/angular.min.js"></script>
   <script src="/app/app.js"></script>
+  <script src="/app/config.js"></script>
+  <script src="/app/directives.js"></script>
+  <script src="/app/controller.js"></script>
 </body>
 
 </html>
