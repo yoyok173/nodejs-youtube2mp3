@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-youtube2mp3-client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "John Makridis",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.6.10",
+    "bootstrap": "4.0.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "3.3.1",
+    "simple-line-icons": "^2.4.1"
+  }
+}
