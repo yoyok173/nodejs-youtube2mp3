@@ -7,7 +7,7 @@
 ### Linux
 ```bash
 # Download & install Python 2.7 for linux
-> <a href="https://www.python.org/downloads/" target="_blank">Download Python 2.7</a>
+https://www.python.org/downloads
 
 # Install Pip (Python package management system - Python Package Index)
 > sudo apt install python-pip
@@ -41,7 +41,7 @@ The youtube-dl executable, ffmpeg, etc. are already placed in the repository ins
 > node app.js
 
 # Open the app by browsing to
-<a href="http://localhost:7777" target="_blank">http://localhost:7777</a>
+http://localhost:7777
 ```
 
 ### Licence
