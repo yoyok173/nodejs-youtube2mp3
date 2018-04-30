@@ -95,12 +95,12 @@
           </div>
         </div>
         <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3" data-toggle="tooltip" title="Download your files by navigating to /music/YoutubeSongName">
             <div class="features-icons-icon d-flex">
-              <i class="icon-layers m-auto text-primary"></i>
+              <i class="icon-cloud-download m-auto text-primary"></i>
             </div>
-            <h3>Bootstrap 4 Ready</h3>
-            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
+            <h3>File Storage</h3>
+            <p class="lead mb-0">Download your converted MP3 files whenever you want!</p>
           </div>
         </div>
         <div class="col-lg-4">
@@ -144,12 +144,19 @@
   </footer>
 
   <script src="/modules/jquery/dist/jquery.min.js"></script>
+  <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
   <script src="/modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="/modules/angular/angular.min.js"></script>
   <script src="/app/app.js"></script>
   <script src="/app/config.js"></script>
   <script src="/app/directives.js"></script>
   <script src="/app/controller.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
 </body>
 
 </html>
