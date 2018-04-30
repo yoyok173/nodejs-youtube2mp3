@@ -2,12 +2,12 @@
 
 **Simple Youtube to MP3 online converter with Youtube-dl, Node.js, AngularJS &amp; Bootstrap 4.**
 
-### Prerequisites
+# Prerequisites
 
-# Linux
+### Linux
 ```bash
-# Install Python 2.7 for linux
-https://www.python.org/downloads/
+# Download & install Python 2.7 for linux
+[Download Python 2.7](https://www.python.org/downloads/)
 
 # Install Pip (Python package management system - Python Package Index)
 > sudo apt install python-pip
@@ -16,12 +16,12 @@ https://www.python.org/downloads/
 > pip install --upgrade git+https://github.com/rg3/youtube-dl
 ```
 
-# Windows
-```bash
-No installations required. The youtube-dl executable, ffmpeg, etc. are already placed in the repository inside /lib/youtube-dl/windows folder.  
-```
+### Windows
+No installations/dependencies required. 
+The youtube-dl executable, ffmpeg, etc. are already placed in the repository inside /lib/youtube-dl/windows folder.  
 
-### Usage
+
+# Usage
 ```bash
 # Clone this repository
 git clone https://github.com/johnmakridis/nodejs-youtube2mp3
